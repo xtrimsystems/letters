@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { i18nStore } from './Stores/I18nStore.ts';
+	import { i18nStore } from './Stores/I18nStore';
 
     const rewards = [
         {

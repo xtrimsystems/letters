@@ -1,9 +1,9 @@
 <script lang="ts">
-    import { customCategoriesStore } from './Stores/CustomCategoriesStore.ts';
-    import { customStagesStore } from './Stores/CustomStagesStore.ts';
-    import { JsonFile } from './Helpers/JsonFile.ts'
-    import { createNewCategory } from './Writers/CategoriesWriter.ts';
-    import { createNewStage } from "./Writers/StagesWriter.ts";
+    import { customCategoriesStore } from './Stores/CustomCategoriesStore';
+    import { customStagesStore } from './Stores/CustomStagesStore';
+    import { JsonFile } from './Helpers/JsonFile'
+    import { createNewCategory } from './Writers/CategoriesWriter';
+    import { createNewStage } from "./Writers/StagesWriter";
 
     export let showCreateNewCategoryModalForm;
     let jsonFile;

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { customCategoriesStore } from './Stores/CustomCategoriesStore.ts';
+	import { customCategoriesStore } from './Stores/CustomCategoriesStore';
 	import CustomCategory from './CustomCategory.svelte';
 </script>
 

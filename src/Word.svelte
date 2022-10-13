@@ -1,8 +1,7 @@
 <script lang="ts">
-    export let value = 'demo';
-    export let index = 2;
-    export let isMiniLetterActive = false;
-
+    export let value: string = 'demo';
+    export let index: number = 2;
+    export let isMiniLetterActive: boolean = false;
 </script>
 <div class="word">
     {#each value as letter, i}

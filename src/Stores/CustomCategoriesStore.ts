@@ -1,5 +1,5 @@
 import { CustomStore } from './CustomStore';
-import { Category } from '../Domain';
+import type { Category } from '../Domain';
 
 class CustomCategoriesStore extends CustomStore<Category[]>
 {

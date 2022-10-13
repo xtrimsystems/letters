@@ -1,7 +1,7 @@
 <script>
     import { createEventDispatcher, onDestroy } from 'svelte';
 
-    import { i18nStore } from './Stores/I18nStore.ts';
+    import { i18nStore } from './Stores/I18nStore';
 
     const dispatch = createEventDispatcher();
     const close = () => dispatch('close');

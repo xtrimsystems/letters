@@ -1,9 +1,9 @@
 <script lang="ts">
     import { createEventDispatcher } from 'svelte';
 
-    import { i18nStore } from './Stores/I18nStore.ts';
-    import { ImageFileToBase64 } from './Helpers/ImageFileToBase64.ts'
-    import { createNewCategory } from "./Writers/CategoriesWriter.ts";
+    import { i18nStore } from './Stores/I18nStore';
+    import { ImageFileToBase64 } from './Helpers/ImageFileToBase64'
+    import { createNewCategory } from "./Writers/CategoriesWriter";
 
     import Modal from './Modal.svelte';
 

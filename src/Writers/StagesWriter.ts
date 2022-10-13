@@ -1,6 +1,6 @@
 import { indexedDB } from '../IndexDB'
 import { customStagesStore } from '../Stores';
-import { Stage } from "../Domain";
+import type { Stage } from "../Domain";
 
 export async function createNewStage (word: string, imageBase64: string, categoryId: number): Promise<number>
 {

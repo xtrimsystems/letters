@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { configurationStore } from './Stores/ConfigurationStore.ts';
-	import { i18nStore } from './Stores/I18nStore.ts';
-	import { CssVars } from './Helpers/CssVars.ts';
-	import { ColorThemeBuilder } from './Helpers/ColorThemeBuilder.ts';
-	import { speechSynthesis } from './Helpers/SpeechSynthesis.ts'
+	import { configurationStore } from './Stores/ConfigurationStore';
+	import { i18nStore } from './Stores/I18nStore';
+	import { CssVars } from './Helpers/CssVars';
+	import { ColorThemeBuilder } from './Helpers/ColorThemeBuilder';
+	import { speechSynthesis } from './Helpers/SpeechSynthesis'
 
 	import Configuration from './Configuration.svelte';
 	import Board from './Board.svelte';
@@ -11,13 +11,14 @@
 	import NavBar from './NavBar.svelte';
 	import CustomCategoriesMenu from "./CustomCategoriesMenu.svelte";
 	import CreateCategoryModalForm from "./CreateCategoryModalForm.svelte";
+	import type { ColorTheme } from "./Domain";
 
 	let voices: SpeechSynthesisVoice[];
-	let colorTheme;
-	let isSidebarOpen = false;
+	let colorTheme: ColorTheme;
+	let isSidebarOpen: boolean = false;
 	let showCreateNewCategoryModalForm = false;
 
-	speechSynthesis.addEventListener('onLoad', (e, data) => {
+	speechSynthesis.addEventListener('onLoad', (e: CustomEvent, data: SpeechSynthesisVoice[]) => {
 		speechSynthesis.setVoice($configurationStore.language);
 		voices = data;
 	});
@@ -105,8 +106,5 @@
 		object-fit: cover;
 		margin-right: 1rem;
 		cursor: pointer;
-	}
-	input[type="text"] {
-		flex: 1;
 	}
 </style>

@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { fly } from 'svelte/transition';
 
-	import { configurationStore } from './Stores/ConfigurationStore.ts';
-	import { i18nStore } from './Stores/I18nStore.ts';
+	import { configurationStore } from './Stores/ConfigurationStore';
+	import { i18nStore } from './Stores/I18nStore';
 
-	export let isSidebarOpen = false;
+	export let isSidebarOpen: boolean = false;
 
 	function openGameView() {
 		configurationStore.closeConfigurationAndCustomCategories();

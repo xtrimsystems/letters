@@ -1,14 +1,14 @@
 <script lang="ts">
-	import { customStagesStore } from './Stores/CustomStagesStore.ts';
-	import { indexedDB } from './IndexDB/IndexedDB.ts'
-	import { deleteStage, updateStage } from "./Writers/StagesWriter.ts";
-	import { ImageFileToBase64 } from './Helpers/ImageFileToBase64.ts'
+	import { deleteStage, updateStage } from "./Writers/StagesWriter";
+	import { ImageFileToBase64 } from './Helpers/ImageFileToBase64'
+	import type { Stage } from './Domain';
 
-	export let stage;
-	let isEditable = false;
-	let stageWordBeforeChange;
-	let stageImageBeforeChange;
-	let editStageFormFiles;
+	export let stage: Stage;
+	let isEditable: boolean = false;
+	let stageWordBeforeChange: string;
+	let stageImageBeforeChange: string;
+	let editStageFormFiles: FileList;
+
 	$: (async function imgToBase64() {
 		if (editStageFormFiles && editStageFormFiles[0] && editStageFormFiles[0].type.includes('image')) {
 			stage.imageBase64 = await ImageFileToBase64.convert(editStageFormFiles[0])
@@ -41,7 +41,7 @@
 <li class="list-group-item">
 	{#if isEditable}
 		<label>
-			<img src="{stage.imageBase64}" class="thumbnail" />
+			<img src="{stage.imageBase64}" alt="{stage.word}" class="thumbnail" />
 			<input bind:files={editStageFormFiles} class="visibleButHidden" type="file" accept="image/*" />
 		</label>
 	{:else}
@@ -49,7 +49,7 @@
 	{/if}
 	<input
 		bind:value={stage.word}
-		readonly="{isEditable ? '': 'readonly'}"
+		readonly="{isEditable}"
 		class="form-control form-control-lg"
 		type="text"
 		placeholder="{stage.word}"

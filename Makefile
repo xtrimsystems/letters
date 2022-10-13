@@ -17,5 +17,5 @@ dev:
 sync:
 	docker-compose run --rm -w /www node npm run sync # Allows external devices to connect to localhost
 
-exec:
-	docker-compose run --rm -w /www node npm run build
+validate:
+	docker-compose run --rm -w /www node npm run validate

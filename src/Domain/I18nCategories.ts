@@ -1,4 +1,4 @@
-import { Category, Stage } from './';
+import type { Category, Stage } from './';
 
 export interface I18nCategories {
 	language: string,

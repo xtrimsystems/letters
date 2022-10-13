@@ -1,4 +1,4 @@
-import { ColorThemeType, Configuration } from '../Domain';
+import type { ColorThemeType, Configuration } from '../Domain';
 import { CustomStore } from './CustomStore';
 import { localStorage } from '../Helpers/LocalStorage';
 

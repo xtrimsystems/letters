@@ -33,7 +33,7 @@ export interface ColorTheme {
 	lightFontColor: string,
 }
 
-abstract class Color implements ColorTheme {
+export abstract class Color implements ColorTheme {
 	lightgrey: string = '#dbdbdb';
 	white: string = '#ffffff';
 	black: string = '#000000';

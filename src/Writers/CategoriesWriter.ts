@@ -1,6 +1,6 @@
 import { customCategoriesStore, customStagesStore } from '../Stores';
 import { indexedDB } from '../IndexDB'
-import {Category} from "../Domain";
+import type { Category } from "../Domain";
 
 export async function createNewCategory (name: string, imageBase64: string): Promise<number>
 {

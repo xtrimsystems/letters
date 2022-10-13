@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { configurationStore } from './Stores/ConfigurationStore.ts';
-	import { i18nStore } from './Stores/I18nStore.ts';
-	import { speechSynthesis } from './Helpers/SpeechSynthesis.ts';
+	import { configurationStore } from './Stores/ConfigurationStore';
+	import { i18nStore } from './Stores/I18nStore';
+	import { speechSynthesis } from './Helpers/SpeechSynthesis';
 
 	import SelectCategory from './SelectCategory.svelte';
 	import RewardScreen from './RewardScreen.svelte';
@@ -22,14 +22,14 @@
 	}
 	$: if ($configurationStore.language !== initialLanguage) resetGame();
 
-	async function onInputChanged (event) {
+	async function onInputChanged (event: InputEvent) {
 		if(!event.data && !event.data.length) return;
 		const char = event.data[event.data.length - 1];
 		if (!char) return;
 		const word = stages[0].word;
 
 		// Trick so the keyboard on smartphones is on caps or not
-		event.srcElement.value = $configurationStore.isMiniLetterActive ? 'a': '';
+		(event.currentTarget as HTMLInputElement).value = $configurationStore.isMiniLetterActive ? 'a': '';
 
 		if ($configurationStore.isConfigurationOpen) return;
 
@@ -103,7 +103,7 @@
 		<div>
 			<input
 				class="visibleButHidden"
-				on:input={onInputChanged}
+				on:input={(event) => onInputChanged(event)}
 				on:blur={function () { this.focus() }}
 				autofocus
 				type="text"

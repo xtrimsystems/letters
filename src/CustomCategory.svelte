@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { customStagesStore } from './Stores/CustomStagesStore.ts';
-	import { i18nStore } from './Stores/I18nStore.ts';
-	import { ImageFileToBase64 } from './Helpers/ImageFileToBase64.ts'
-	import { deleteCategory, updateCategory } from "./Writers/CategoriesWriter.ts";
-	import { createNewStage } from "./Writers/StagesWriter.ts";
+	import { customStagesStore } from './Stores/CustomStagesStore';
+	import { i18nStore } from './Stores/I18nStore';
+	import { ImageFileToBase64 } from './Helpers/ImageFileToBase64'
+	import { deleteCategory, updateCategory } from "./Writers/CategoriesWriter";
+	import { createNewStage } from "./Writers/StagesWriter";
 
 	import CustomStage from './CustomStage.svelte';
 

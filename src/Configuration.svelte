@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { ColorThemeType } from './Domain/Configuration.ts';
-	import { configurationStore } from './Stores/ConfigurationStore.ts';
-	import { i18nStore } from './Stores/I18nStore.ts';
-	import { InterfaceTexts } from './InterfaceTexts.ts';
+	import { ColorThemeType } from './Domain';
+	import { configurationStore } from './Stores';
+	import { i18nStore } from './Stores/I18nStore';
+	import { InterfaceTexts } from './InterfaceTexts';
 
 	import Panel from './Panel.svelte';
 	import Word from './Word.svelte';

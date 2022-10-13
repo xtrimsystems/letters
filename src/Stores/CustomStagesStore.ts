@@ -1,5 +1,5 @@
 import { CustomStore } from './CustomStore';
-import { Stage } from '../Domain';
+import type { Stage } from '../Domain';
 
 class CustomStagesStore extends CustomStore<Stage[]>
 {
